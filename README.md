@@ -23,10 +23,10 @@ optional arguments:
 ### Example usage:
 ```
 # Convert to a json format for FacebookChatStatistics
-python3 facebook-message-converter.py --in message.json --out converted.json --format json
+$ python3 facebook-message-converter.py --in message.json --out converted.json --format json
 ```
 
 ```
 # Convert to a txt format for conversation-analyzer
-python3 facebook-message-converter.py --in message.json --out converted.txt --format txt
+$ python3 facebook-message-converter.py --in message.json --out converted.txt --format txt
 ```
