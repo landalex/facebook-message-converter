@@ -6,7 +6,7 @@ This script exports in a simple text format used by [conversation-analyzer](http
 
 # Usage
 ```
-python3 facebook-message-converter.py --help
+$ python3 facebook-message-converter.py --help
 usage: facebook-message-converter.py [-h] --in ARCHIVEPATH --out OUTPATH
                                      --format FORMAT
 
