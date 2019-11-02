@@ -6,7 +6,7 @@ This script exports in a simple text format used by [conversation-analyzer](http
 
 # Usage
 ```
-python3 facebook-message-converter.py --help
+$ python3 facebook-message-converter.py --help
 usage: facebook-message-converter.py [-h] --in ARCHIVEPATH --out OUTPATH
                                      --format FORMAT
 
@@ -23,10 +23,10 @@ optional arguments:
 ### Example usage:
 ```
 # Convert to a json format for FacebookChatStatistics
-python3 facebook-message-converter.py --in message.json --out converted.json --format json
+$ python3 facebook-message-converter.py --in message.json --out converted.json --format json
 ```
 
 ```
 # Convert to a txt format for conversation-analyzer
-python3 facebook-message-converter.py --in message.json --out converted.txt --format txt
+$ python3 facebook-message-converter.py --in message.json --out converted.txt --format txt
 ```
