@@ -27,7 +27,11 @@ message_senders = set()
 tiebreaker_counter = 0
 for message in data['messages']:
     try:
-        message_datetime = datetime.fromtimestamp(int(message['timestamp']))
+        if 'timestamp_ms' in message:
+            message_timestamp = int(message['timestamp_ms']) / 1000
+        else:
+            message_timestamp = int(message['timestamp'])
+        message_datetime = datetime.fromtimestamp(message_timestamp)
         if 'content' not in message:
             # 'content' property contains the message text, other message types (stickers, media etc) use different
             # properties which aren't handled here
@@ -46,7 +50,7 @@ for message in data['messages']:
                                                                       time=message_datetime.strftime(TIME_FORMAT),
                                                                       sender=sender.replace(' ', ''),
                                                                       message=message_content.replace('\n', ' '))
-        heapq.heappush(heap, MessageTuple(timestamp=int(message['timestamp']), tiebreak_value=tiebreaker_counter,
+        heapq.heappush(heap, MessageTuple(timestamp=message_timestamp, tiebreak_value=tiebreaker_counter,
                                           message=new_message))
         tiebreaker_counter += 1
     except KeyError as e:
